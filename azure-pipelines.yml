@@ -10,7 +10,21 @@ steps:
 # Step 1: Checkout the repository
 - task: Checkout@1
 
-# Step 2: Set up Apache Maven
+# Step 2: Install Microsoft Edge, Edge WebDriver, Google Chrome, and ChromeDriver
+- script: |
+    sudo apt-get update
+    # Install Microsoft Edge and Edge WebDriver
+    sudo apt-get install -y microsoft-edge-stable
+    sudo apt-get install -y selenium-edge-driver
+    which msedgedriver
+    
+    # Install Google Chrome and ChromeDriver
+    sudo apt-get install -y google-chrome-stable
+    sudo apt-get install -y chromium-chromedriver
+    which chromedriver
+  displayName: 'Install Browsers and WebDrivers'
+
+# Step 3: Set up Apache Maven and build/test the project
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,26 +35,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test'
-
-# Step 3: Install Microsoft Edge and Edge WebDriver
-- script: |
-    sudo apt-get update
-    sudo apt-get install -y microsoft-edge-stable
-    sudo apt-get install -y selenium-edge-driver
-    which msedgedriver
-  displayName: 'Install Microsoft Edge and EdgeDriver'
-
-# Step 4: Install Google Chrome and ChromeDriver
-- script: |
-    sudo apt-get install -y google-chrome-stable
-    sudo apt-get install -y chromium-chromedriver
-    which chromedriver
-  displayName: 'Install Google Chrome and ChromeDriver'
-
-# Step 5: Build and Test the Project
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean test'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
