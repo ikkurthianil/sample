@@ -25,7 +25,7 @@ steps:
   displayName: 'Install Browsers and WebDrivers'
 
 # Step 3: Set up Apache Maven and build/test the project
-- task: Maven@4
+- task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
