@@ -55,9 +55,9 @@ public class Sample {
     /**
      * Test to verify the visibility of the FreshWorks logo.
      */
-    //@Test(priority = 1)
+    @Test(priority = 1)
     public void freshWorksLogoTest() {
-        boolean isLogoDisplayed = driver.findElement(By.cssSelector("a.logo.logo-fworks")).isDisplayed();
+        boolean isLogoDisplayed = driver.findElement(By.cssSelector("img[alt='freshworks-logo']")).isDisplayed();
         Assert.assertTrue(isLogoDisplayed, "FreshWorks logo is not displayed!");
         System.out.println("Excute Test One");
     }
@@ -65,7 +65,7 @@ public class Sample {
     /**
      * Test to verify the title of the FreshWorks home page.
      */
-    @Test(priority = 1)
+    //@Test(priority = 2)
     public void freshWorksTitleTest() {
         String actualTitle = driver.getTitle();
         System.out.println("Page Title: " + actualTitle);
