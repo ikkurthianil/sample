@@ -13,6 +13,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: echo "Running Maven tests and cleaning workspace..."
+  displayName: 'Echo Step'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml' # Path to the Maven POM file
