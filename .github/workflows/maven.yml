@@ -31,10 +31,12 @@ jobs:
       run: |
         choco install microsoft-edge -y
         choco install selenium-edge-driver -y
-        edgewebdriver --version
+        
         
 
     - name: Build with Maven
-      run: mvn clean test
+    shell: powershell
+
+    run: mvn clean test
 
     
