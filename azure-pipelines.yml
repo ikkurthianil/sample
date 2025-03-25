@@ -13,22 +13,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-# Step: Set up JDK (Java Development Kit)
-
-# Step: Run Maven commands
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml' # Path to the Maven POM file
     mavenOptions: '-Xmx3072m' # JVM options
     javaHomeOption: 'JDKVersion' # Use specified JDK version
-    jdkVersionOption: '11' # Ensure compatibility with JDK 11
+    jdkVersionOption: '1.11' # Ensure compatibility with JDK 11
     jdkArchitectureOption: 'x64' # 64-bit Java architecture
     publishJUnitResults: true # Enable publishing JUnit test results
     testResultsFiles: '**/surefire-reports/TEST-*.xml' # Location of test result files
     goals: 'clean test' # Clean build directory and package the project
 
-# Step: Publish Build Artifacts
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'target/*.jar' # Adjust path to the JAR file or artifacts
-    ArtifactName: 'drop'
+
