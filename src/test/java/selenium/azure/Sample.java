@@ -65,7 +65,7 @@ public class Sample {
     /**
      * Test to verify the title of the FreshWorks home page.
      */
-    //@Test(priority = 2)
+    @Test(priority = 2)
     public void freshWorksTitleTest() {
         String actualTitle = driver.getTitle();
         System.out.println("Page Title: " + actualTitle);

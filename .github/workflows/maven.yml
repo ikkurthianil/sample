@@ -30,6 +30,12 @@ jobs:
         choco install selenium-edge-driver -y
         where.exe msedgedriver
 
+         # Install Google Chrome and ChromeDriver
+        choco install googlechrome -y
+        choco install chromedriver -y
+        where.exe chromedriver
+
+
     # Build and test with Maven
     - name: Build with Maven
       shell: powershell
