@@ -73,7 +73,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <!-- Pointing to your testng.xml file -->
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
