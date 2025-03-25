@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <suite name="Browser Testing Suite" parallel="tests" thread-count="2"> -->
+<suite name="Browser Testing Suite">
+
+
+ <test name="Edge Browser Test">
+        <parameter name="browser" value="edge" />
+        <classes>
+            <class name="selenium.azure.Sample" />
+        </classes>
+    </test>
+    
+    <test name="Chrome Browser Test">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="selenium.azure.Sample" />
+        </classes>
+    </test>
+</suite> <!-- Suite -->
+
