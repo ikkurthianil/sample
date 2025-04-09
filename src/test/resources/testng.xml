@@ -1,16 +1,18 @@
 
 <suite name="Browser Testing Suite">
+
+
     <test name="Edge Browser Test">
         <parameter name="browser" value="edge" />
         <classes>
-            <class name="selenium.azure.Sample" />
+            <class name="selenium.azure.DemoTest" />
         </classes>
     </test>
    
     <test name="Chrome Browser Test">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="selenium.azure.Sample" />
+            <class name="selenium.azure.DemoTest" />
         </classes>
     </test>
     
